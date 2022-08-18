@@ -1,1 +1,9 @@
-/*# sourceMappingURL=styles.css.map */
+.index nav {
+  height: 20%;
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+}
+.index nav li a {
+  color: white;
+  list-style: none;
+}/*# sourceMappingURL=styles.css.map */
