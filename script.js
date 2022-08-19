@@ -1,15 +1,23 @@
 //function promedio(promedio1, promedio2, promedio3){
 //}
-function promediar() {
-    let promedio1 = prompt('Ingresa la nota del PRIMER trimestre');
-  }
 
-class Persona {
-    constructor(nombre, edad, calle) {
-        this.nombre = nombre; //this.propiedad = valor inicial
-        this.edad = edad; 
-        this.calle = calle;
-    }
+
+
+function promediar() {
+    let promedio1 = prompt('Ingresá nota de 1');
+    let promedio2 = prompt('Ingresá nota de 2');
+    let promedio3 = prompt('Ingresá nota de 3');
+    let resultado = (Number(promedio1) + Number(promedio2) + Number(promedio3))
+    alert('Tu resultado es ' + parseInt(resultado));
+    if (resultado > 21) {
+            alert('Aprobaste!')
+        } else {
+            alert('Desaprobaste:(')
+        }
 }
-const persona1 = new Persona("Homero", 39, "calle123")
-console.log(persona1)
+
+
+/*for (let i = 1; i = 3; i++) {
+    let promedio = prompt('Ingresa la nota del' + i + 'trimestre');
+}
+*/
