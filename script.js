@@ -12,53 +12,43 @@ function promediar() {
 }
 
 
-
-// class Estudiante {
-//     constructor(nombre, promedio, ubicacion) {
-//         this.nombre = nombre
-//         this.promedio = promedio
-//         this.ubicacion = ubicacion
-//         this.aprobado = function () {
-//             if (Estudiante.promedio > 21) {
-//                 console.log("Aprobados")
-//             } else {
-//                 console.log("Desaprobados")
-//             }
-//         }
-//     }
-// }
-
-// const estudiantes = []
-// estudiantes.push(new Estudiante("Juan", 25, "Tigre"))
-// estudiantes.push(new Estudiante("Teresa", 21, "San Isidro"))
-// estudiantes.push(new Estudiante("Carlos", 18, "CABA"))
-// console.log(estudiantes);
-
-
-class Estudiante {
-    constructor(nombre, promedio) {
-        this.nombre = nombre;
-        this.promedio = promedio
-    }
-    condicion(){
-        if(this.promedio = 21){
-            return `El estudiante ${this.nombre} esta aprobado con un 7. Significa que vas a tener oportunidades de elección, pero `
-        } else if (this.promedio > 21) {
-            return `El estudiante ${this.nombre} esta aprobado por sobre el mínimo, lo que significa que vas a tener amplias opciones para elegir universidad! Felicidades.`
-        } else if(this.promedio < 21) {
-            return `El estudiante ${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
+function universidad() {
+    class Estudiante {
+        constructor(nombre, promedio) {
+            this.nombre = nombre;
+            this.promedio = promedio
+            
+        }
+        condicion(){
+            if (this.promedio == 21){
+                return `El estudiante ${this.nombre} esta aprobado con un 7. Significa que vas a tener oportunidades, pero algo limitadas.`
+            } else if (this.promedio > 21) {
+                return `El estudiante ${this.nombre} esta aprobado por sobre el mínimo, lo que significa que vas a tener amplias opciones para elegir universidad! Felicidades.`
+            } else if (this.promedio < 21) {
+                return `El estudiante ${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
+            }
         }
     }
+    
+    const inputNombre = document.getElementById('nombre').value
+    const inputPromedio = document.getElementById('promedio').value
+    
+    estudianteNuevo = new Estudiante(inputNombre, inputPromedio)
+    agregar()
 }
 
 const estudiantes = []
 
-let inputNombre = prompt('Ingresa tu nombre')
-let inputPromedio = prompt('Ingresa tu promedio')
+function agregar(){
+    estudiantes.push(estudianteNuevo)
+    estudiantes.push(estudianteNuevo.condicion())
+    console.log(estudiantes);
+}
 
+let btn = document.getElementById('agregarEstudiante')
 
-let estudiante1 = new Estudiante(inputNombre, inputPromedio)
-console.log(estudiante1.condicion());
-
-
+btn.addEventListener('click', function(e) {
+    if(e.target == btn)
+    inputNombre.innerHTML = ''
+})
 
