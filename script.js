@@ -1,17 +1,20 @@
-let loginNombre = document.getElementById('loginNombre').value
-let loginApellido = document.getElementById('loginApellido').value
+function storage () {
+    let loginNombre = document.getElementById('loginNombre').value
+    let loginApellido = document.getElementById('loginApellido').value
+    
+    let json = JSON.stringify(loginNombre)
+    let json2 = JSON.stringify(loginApellido)
+    
+    sessionStorage.setItem('nombre', json)
+    sessionStorage.setItem('apellido', json2)
+    
+    let nombreLogin = sessionStorage.getItem('nombre')
+    let apellidoLogin = sessionStorage.getItem('apellido')
+    
+    console.log(`${nombreLogin} ${apellidoLogin} esta logueado`);
+    
+}
 
-let json = JSON.stringify(loginNombre)
-let json2 = JSON.stringify(loginApellido)
-
-sessionStorage.setItem('nombre', json)
-sessionStorage.setItem('apellido', json2)
-
-let nombreLogin = sessionStorage.getItem('nombre')
-let apellidoLogin = sessionStorage.getItem('apellido')
-
-console.log(nombreLogin);
-// console.log(`Mi nombre es ${nombreLogin} ${apellidoLogin}`);
 
 
 function promediar() {
