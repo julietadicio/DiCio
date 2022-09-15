@@ -1,3 +1,19 @@
+let loginNombre = document.getElementById('loginNombre').value
+let loginApellido = document.getElementById('loginApellido').value
+
+let json = JSON.stringify(loginNombre)
+let json2 = JSON.stringify(loginApellido)
+
+sessionStorage.setItem('nombre', json)
+sessionStorage.setItem('apellido', json2)
+
+let nombreLogin = sessionStorage.getItem('nombre')
+let apellidoLogin = sessionStorage.getItem('apellido')
+
+console.log(nombreLogin);
+// console.log(`Mi nombre es ${nombreLogin} ${apellidoLogin}`);
+
+
 function promediar() {
     let promedio1 = prompt('Ingresá tu nota final del primer trimestre');
     let promedio2 = prompt('Ingresá tu nota final del segundo trimestre');
@@ -14,41 +30,41 @@ function promediar() {
 
 function universidad() {
     class Estudiante {
-        constructor(nombre, promedio) {
+        constructor(nombre, apellido, promedio) {
             this.nombre = nombre;
-            this.promedio = promedio
-            
+            this.apellido = apellido;
+            this.promedio = promedio;
         }
-        condicion(){
-            if (this.promedio == 21){
-                return `El estudiante ${this.nombre} esta aprobado con un 7. Significa que vas a tener oportunidades, pero algo limitadas.`
+        condicion() {
+            if (this.promedio == 21) {
+                return `${this.nombre} esta aprobado con un 7. Significa que vas a tener oportunidades, pero algo limitadas.`
             } else if (this.promedio > 21) {
-                return `El estudiante ${this.nombre} esta aprobado por sobre el mínimo, lo que significa que vas a tener amplias opciones para elegir universidad! Felicidades.`
+                return `${this.nombre} esta aprobado por sobre el mínimo, lo que significa que vas a tener amplias opciones para elegir universidad! Felicidades.`
             } else if (this.promedio < 21) {
-                return `El estudiante ${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
+                return `${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
             }
         }
     }
-    
+
     const inputNombre = document.getElementById('nombre').value
+    const inputApellido = document.getElementById('apellido').value
     const inputPromedio = document.getElementById('promedio').value
-    
-    estudianteNuevo = new Estudiante(inputNombre, inputPromedio)
+
+    estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio)
     agregar()
 }
 
 const estudiantes = []
 
-function agregar(){
+function agregarNuevo() {
+    document.getElementById('form').reset()
+}
+
+function agregar() {
     estudiantes.push(estudianteNuevo)
     estudiantes.push(estudianteNuevo.condicion())
     console.log(estudiantes);
+    document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido + '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
 }
 
-let btn = document.getElementById('agregarEstudiante')
-
-btn.addEventListener('click', function(e) {
-    if(e.target == btn)
-    inputNombre.innerHTML = ''
-})
 

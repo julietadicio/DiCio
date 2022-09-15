@@ -65,5 +65,22 @@ $color: #1488CC;
         }
       }
 
+      table {
+        margin-top: 1%;
+      }
+
+      form {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+      }
+
+      input {
+        border: 1px solid #1488CC;
+        padding: 1%;
+        border-radius: 5px;
+        margin: 0 10px;
+      }
 }
   
