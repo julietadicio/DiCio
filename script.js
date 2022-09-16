@@ -33,10 +33,11 @@ function promediar() {
 
 function universidad() {
     class Estudiante {
-        constructor(nombre, apellido, promedio) {
+        constructor(nombre, apellido, promedio, universidad) {
             this.nombre = nombre;
             this.apellido = apellido;
             this.promedio = promedio;
+            this.universidad = universidad
         }
         condicion() {
             if (this.promedio == 21) {
@@ -52,8 +53,9 @@ function universidad() {
     const inputNombre = document.getElementById('nombre').value
     const inputApellido = document.getElementById('apellido').value
     const inputPromedio = document.getElementById('promedio').value
+    const inputUniversidad = document.getElementById('universidad').value
 
-    estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio)
+    estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio, inputUniversidad)
     agregar()
 }
 
@@ -66,18 +68,20 @@ function agregar() {
     estudiantes.push(estudianteNuevo)
     estudiantes.push(estudianteNuevo.condicion())
     console.log(estudiantes);
-    document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido + '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
+    document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido + '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.universidad + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
 
     const btnModal = document.getElementById('btnCarta')
     const modal = document.getElementById('modal')
     const nombreModal = document.getElementById('nombreModal')
     const promedioModal = document.getElementById('promedioModal')
+    const universidadModal = document.getElementById('universidadModal')
 
     btnModal.addEventListener('click', function (e) {
         if (e.target == btnModal) {
             modal.style.display = 'block'
-            nombreModal.innerHTML = 'Mi nombre es ' + estudianteNuevo.nombre + ' ' + estudianteNuevo.apellido + 'y quería aplicar para ser estudiante en su próximo año lectivo'
-            promedioModal.innerHTML = 'Mi promedio fue ' + estudianteNuevo.promedio + ', lo que demuestra mi desempeño'
+            nombreModal.innerHTML = 'Mi nombre es ' + estudianteNuevo.nombre + ' ' + estudianteNuevo.apellido + ', y quería aplicar para ser estudiante en su próximo año lectivo.'
+            promedioModal.innerHTML = 'Mi promedio fue ' + estudianteNuevo.promedio + ', lo que demuestra mi desempeño escolar y mi dedicación.'
+            universidadModal.innerHTML = 'Por eso agradecería si tienen en cuenta mi aplicación para la universidad ' + estudianteNuevo.universidad + '.'
         }
     })
 
