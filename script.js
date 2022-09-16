@@ -1,35 +1,35 @@
-function storage () {
-    let loginNombre = document.getElementById('loginNombre').value
-    let loginApellido = document.getElementById('loginApellido').value
-    
-    let json = JSON.stringify(loginNombre)
-    let json2 = JSON.stringify(loginApellido)
-    
-    sessionStorage.setItem('nombre', json)
-    sessionStorage.setItem('apellido', json2)
-    
-    let nombreLogin = sessionStorage.getItem('nombre')
-    let apellidoLogin = sessionStorage.getItem('apellido')
-    
-    console.log(`${nombreLogin} ${apellidoLogin} esta logueado`);
-    
-}
+function storage() {
 
+    sessionStorage.nombre = document.getElementById("loginNombre").value;
+    sessionStorage.apellido = document.getElementById("loginApellido").value;
+
+    sessionStorage.setItem('nombre', sessionStorage.nombre)
+    sessionStorage.setItem('apellido', sessionStorage.apellido)
+
+    document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + sessionStorage.nombre + " " + sessionStorage.apellido + ", te estábamos esperando."
+
+    console.log(`${sessionStorage.nombre} ${sessionStorage.apellido} esta logueado`);
+}
 
 
 function promediar() {
-    let promedio1 = prompt('Ingresá tu nota final del primer trimestre');
-    let promedio2 = prompt('Ingresá tu nota final del segundo trimestre');
-    let promedio3 = prompt('Ingresá tu nota final del tercer trimestre');
-    let resultado = (parseInt(promedio1) + parseInt(promedio2) + parseInt(promedio3))
-    alert('La suma de tus notas es ' + resultado + ', ahora vamos a calcular si aprobaste la materia.');
+
+    const trim1 = document.getElementById('1trim').value;
+    const trim2 = document.getElementById('2trim').value;
+    const trim3 = document.getElementById('3trim').value;
+
+    const resultado = (parseInt(trim1) + parseInt(trim2) + parseInt(trim3))
+    const resultado2 = (resultado / 3)
+    console.log(resultado);
+
+    let h2Promedio = document.getElementById('verPromedio')
+
     if (resultado > 21) {
-        alert('Aprobaste! Disfruta tus vacaciones, felicidades :)')
+        h2Promedio.innerHTML = `La suma de tus notas da ${resultado}, y tu promedio fue de ${resultado2.toFixed(1)}. Aprobaste! Felicidades.`
     } else {
-        alert('Desaprobaste, parece que nos vemos en Diciembre :(')
+        h2Promedio.innerHTML = `La suma de tus notas da ${resultado}, y tu promedio fue de ${resultado2.toFixed(1)}. Lamentamos informarte que desaprobaste.`
     }
 }
-
 
 function universidad() {
     class Estudiante {
@@ -57,17 +57,14 @@ function universidad() {
     agregar()
 }
 
-const estudiantes = []
-
 function agregarNuevo() {
     document.getElementById('form').reset()
 }
 
+const estudiantes = []
 function agregar() {
     estudiantes.push(estudianteNuevo)
     estudiantes.push(estudianteNuevo.condicion())
     console.log(estudiantes);
     document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido + '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
 }
-
-

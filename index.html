@@ -37,7 +37,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" onclick="storage()" class="btn btn-primary">Log In</button>
+              <button type="button" onclick="storage()" id="verBienvenida" class="btn btn-primary">Log In</button>
             </div>
           </div>
         </div>
@@ -57,17 +57,21 @@
     </nav>
 
     <div class="jumbotron jumbotron-fluid">
+      <h4 id="bienvenido"></h4>
       <div class="container">
         <h1 class="display-4">Calculá instantáneamente tu promedio</h1>
         <h3>No te lleves ninguna sorpesa, sacate la duda ya.</h3>
+        <label for="">1er trimestre</label><input type="number" id="1trim">
+        <label for="">2do trimestre</label><input type="number" id="2trim">
+        <label for="">3er trimestre</label><input type="number" id="3trim">
+        <h2 id="verPromedio"></h2>
       </div>
-      <button onclick="promediar()">Calcular promedio</button>
+      <button id="promediar" onclick="promediar()">Calcular promedio</button>
     </div>
 
     <div>
-      <h3 id="bienvenido"></h3>
-      <h1>Querés enviar tu perfil estudiantil con tu promedio a un consultor para averiguar a que universidades podrías
-        ingresar?</h1>
+      <h1>Querés ver la condición de tu perfil estudiantil para averiguar a que universidades podrías
+        ingresar? También podes consultar por tus amigos.</h1>
       <form id="form" action="">
         <input id="nombre" type="text" placeholder="Nombre">
         <input id="apellido" type="text" placeholder="Apellido">
@@ -75,7 +79,7 @@
       </form>
       <button onclick="universidad()">Averiguar</button>
       <button onclick="agregarNuevo()">Agregar nuevo</button>
-  
+
       <table class="table table-striped" id="tabla">
         <thead>
           <tr>
@@ -86,6 +90,9 @@
           </tr>
         </thead>
       </table>
+      <div id="moreInfo">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, ex!</h1>
+      </div>
     </div>
 
   </div>
