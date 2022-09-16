@@ -67,4 +67,18 @@ function agregar() {
     estudiantes.push(estudianteNuevo.condicion())
     console.log(estudiantes);
     document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido + '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
+
+    const btnModal = document.getElementById('btnCarta')
+    const modal = document.getElementById('modal')
+    const nombreModal = document.getElementById('nombreModal')
+    const promedioModal = document.getElementById('promedioModal')
+
+    btnModal.addEventListener('click', function (e) {
+        if (e.target == btnModal) {
+            modal.style.display = 'block'
+            nombreModal.innerHTML = 'Mi nombre es ' + estudianteNuevo.nombre + ' ' + estudianteNuevo.apellido + 'y quería aplicar para ser estudiante en su próximo año lectivo'
+            promedioModal.innerHTML = 'Mi promedio fue ' + estudianteNuevo.promedio + ', lo que demuestra mi desempeño'
+        }
+    })
+
 }
