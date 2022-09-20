@@ -1,14 +1,14 @@
 function storage() {
 
-    sessionStorage.nombre = document.getElementById("loginNombre").value;
-    sessionStorage.apellido = document.getElementById("loginApellido").value;
+    localStorage.nombre = document.getElementById("loginNombre").value;
+    localStorage.apellido = document.getElementById("loginApellido").value;
 
-    sessionStorage.setItem('nombre', sessionStorage.nombre)
-    sessionStorage.setItem('apellido', sessionStorage.apellido)
+    localStorage.setItem('nombre', localStorage.nombre)
+    localStorage.setItem('apellido', localStorage.apellido)
 
-    document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + sessionStorage.nombre + " " + sessionStorage.apellido + ", te estábamos esperando."
+    document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + localStorage.nombre + " " + localStorage.apellido + ", te estábamos esperando."
 
-    console.log(`${sessionStorage.nombre} ${sessionStorage.apellido} esta logueado`);
+    console.log(`${localStorage.nombre} ${localStorage.apellido} esta logueado`);
 }
 
 
