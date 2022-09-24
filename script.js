@@ -42,11 +42,13 @@ function universidad() {
         }
         condicion() {
             if (this.promedio == 21) {
-                return `${this.nombre} esta aprobado con un 7. Significa que vas a tener oportunidades, pero algo limitadas.`
+                return `${this.nombre} esta aprobado con un 7, asique va a tener oportunidades, pero algo limitadas.`
             } else if (this.promedio > 21) {
-                return `${this.nombre} esta aprobado por sobre el mínimo, lo que significa que vas a tener amplias opciones para elegir universidad! Felicidades.`
+                return `${this.nombre} esta aprobado por sobre el mínimo, lo que significa que va a tener amplias opciones 
+                para elegir universidad! Felicidades.`
             } else if (this.promedio < 21) {
-                return `${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
+                return `${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de 
+                buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
             }
         }
     }
@@ -58,6 +60,9 @@ function universidad() {
 
     estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio, inputUniversidad)
     agregar()
+
+    localStorage.promedio = document.getElementById("promedio").value;
+    localStorage.setItem('promedio', localStorage.promedio)
 }
 
 function agregarNuevo() {
@@ -70,12 +75,13 @@ function agregar() {
     estudiantes.push(estudianteNuevo.condicion())
     console.log(estudiantes);
     document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido +
-        '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.universidad + '</td><td>' + estudianteNuevo.condicion() + '</td></tr></tbody>'
-        Swal.fire(
-            'Fuiste agregado con éxito',
-            'Para agregar otro alumno, tocá la opción "agregar nuevo"',
-            'success'
-          )
+        '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.universidad + '</td><td>' + estudianteNuevo.condicion() +
+        '</td></tr></tbody>'
+    Swal.fire(
+        'Fuiste agregado con éxito',
+        'Para agregar otro alumno, tocá la opción "agregar nuevo"',
+        'success'
+    )
 }
 
 const btnModal = document.getElementById('btnCarta')
@@ -96,8 +102,8 @@ btnModal.addEventListener('click', function (e) {
 
 
 const enviar = document.getElementById('send')
-enviar.addEventListener('click', function(e) {
-    if(e.target == enviar) {
+enviar.addEventListener('click', function (e) {
+    if (e.target == enviar) {
         Swal.fire({
             position: 'top-end',
             icon: 'success',
@@ -107,3 +113,42 @@ enviar.addEventListener('click', function(e) {
         })
     }
 })
+
+
+
+// const lista = document.querySelector('#listado')
+
+// fetch('https://www.boredapi.com/api/activity?type=recreational')
+//     .then((response) => response.json())
+//     .then((data) => {
+//         data.forEach(post => {
+//             const li = document.createElement('li')
+//             li.innerHTML = 
+//             `
+//             <h5>${post.activity}</h5>
+//             <h5>${post.type}</h5>
+//             `
+//            lista.append(li)
+//         })
+//     })
+
+
+// const lista = document.querySelector('#listado')
+
+// fetch('https://jsonplaceholder.typicode.com/posts')
+//     .then((response) => response.json())
+//     .then((data) => {
+//         data.forEach(post => {
+//             const li = document.createElement('li')
+//             li.innerHTML =
+//                 `
+//             <h5>${post.title}</h5>
+//             <h5>${post.body}</h5>
+//             `
+
+//             lista.append(li)
+//         })
+//     })
+
+
+
