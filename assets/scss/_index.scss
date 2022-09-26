@@ -85,6 +85,7 @@ $color: #1488CC;
     padding: 1%;
     border-radius: 5px;
     margin: 0 10px;
+    overflow: auto;
   }
 
   #moreInfo {
@@ -110,6 +111,18 @@ $color: #1488CC;
 
   h1, h2 {
     text-align: center;
-    margin: 2% 12%;
+    margin: 0 12%;
+  }
+
+  .actividad {
+    text-align: center;
+    background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
+    color: white;
+    margin-top: 5%;
+  }
+
+  img {
+    width: 30%;
+    margin:auto;
   }
 }
