@@ -43,9 +43,15 @@
         </div>
       </div>
 
-      <ul class="nav nav-pills nav-fill py-2">
-        <li class="nav-item lead">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
           <a class="nav-link" href="#">Edutopía</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/universidad.html">Universidad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/actividades.html">Actividades</a>
         </li>
         <li>
           <button type="button" class="btn btn-primary login" data-toggle="modal" data-target="#exampleModal">
@@ -60,60 +66,14 @@
       <div class="container">
         <img src="/assets/img/Calculator-rafiki.png">
         <h1 class="display-4">Calculá instantáneamente tu promedio</h1>
-        <h3>No te lleves ninguna sorpesa, sacate la duda ya.</h3>
+        <h2>No te lleves ninguna sorpesa, sacate la duda ya.</h2>
         <label for="">1er trimestre</label><input type="number" id="1trim">
         <label for="">2do trimestre</label><input type="number" id="2trim">
         <label for="">3er trimestre</label><input type="number" id="3trim">
         <h2 id="verPromedio"></h2>
       </div>
       <button id="promediar" onclick="promediar()">Calcular promedio</button>
-    </div>
-
-    <div>
-      <h1>Querés ver la condición de tu perfil estudiantil para averiguar a que universidades podrías
-        ingresar? También podes consultar por tus amigos.</h1>
-      <form id="form" action="">
-        <input id="nombre" type="text" placeholder="Nombre">
-        <input id="apellido" type="text" placeholder="Apellido">
-        <input id="promedio" type="number" placeholder="Promedio">
-        <input type="text" id="universidad" placeholder='Universidad que desea aplicar'>
-      </form>
-      <button onclick="universidad()">Averiguar</button>
-      <button onclick="agregarNuevo()">Agregar nuevo</button>
-
-      <table class="table table-striped" id="tabla">
-        <thead>
-          <tr>
-            <th scope="col">Nombre</th>
-            <th scope="col">Apellido</th>
-            <th scope="col">Promedio</th>
-            <th scope="col">Universidad</th>
-            <th scope="col">Condición</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div>
-      <h1>Te hicimos un modelo de ensayo para tu presentación a la universidad de tu gusto.</h1>
-
-      <button id="btnCarta">
-        Generar carta
-      </button>
-
-      <div id="modal">
-        <h2 id="nombreModal"></h2>
-        <h3 id="promedioModal"></h3>
-        <h3 id="universidadModal"></h3>
-        <button id="send">Enviar</button>
-      </div>
-    </div>
-
-    <div class="actividad">
-      <img src="/assets/img/Fishing-amico.png" alt="">
-      <h2>Necesitas un recreo de tanto estrés, o querés aprender más habilidades para mejorar tus opciones universitarias? 
-      Te brindamos una lista de actividades para expandir o descansar tu mente.</h2>
-      <div id="api"></div>
-      <p id="precioApi"></p>
+      <h2 class="mt-4">Con tu promedio ya calculado, podes ir a la solapa de universidad para ver las funcionalidades que te brindamos.</h2>
     </div>
 
   </div>
@@ -129,7 +89,7 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="index.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

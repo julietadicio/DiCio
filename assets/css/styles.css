@@ -3,22 +3,23 @@
   overflow-x: hidden;
 }
 
-.index nav {
+nav {
   height: 20%;
   background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
   background: linear-gradient(to right, #2B32B2, #1488CC);
 }
-.index nav li a {
+nav li a {
   color: white;
   list-style: none;
 }
-.index button {
+
+button {
   display: block;
   margin: auto;
   margin-top: 3%;
   border: none;
   padding: 1% 3%;
-  border-radius: 10rem;
+  border-radius: 2px;
   color: #fff;
   text-transform: uppercase;
   font-size: larger;
@@ -29,7 +30,7 @@
   z-index: 1;
   cursor: pointer;
 }
-.index button:after {
+button:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -37,10 +38,10 @@
   width: 100%;
   height: 100%;
   background-color: #1488CC;
-  border-radius: 10rem;
+  border-radius: 2px;
   z-index: -2;
 }
-.index button:before {
+button:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -49,38 +50,44 @@
   height: 100%;
   background-color: #2B32B2;
   transition: all 0.3s;
-  border-radius: 10rem;
+  border-radius: 2px;
   z-index: -1;
 }
-.index button:hover {
+button:hover {
   color: #fff;
 }
-.index button:hover:before {
+button:hover:before {
   width: 100%;
 }
-.index table {
+
+table {
   margin-top: 1%;
 }
-.index form {
+
+form {
   text-align: center;
   display: flex;
   justify-content: center;
 }
-.index input {
+
+input {
   border: 2px solid #1488CC;
   padding: 1%;
   border-radius: 5px;
   margin: 0 10px;
   overflow: auto;
 }
-.index #moreInfo {
+
+#moreInfo {
   display: none;
 }
-.index #verPromedio {
+
+#verPromedio {
   text-align: center;
   margin-top: 1%;
 }
-.index #modal {
+
+#modal {
   display: none;
   padding: 2%;
   color: white;
@@ -91,17 +98,25 @@
   margin-top: 3%;
   width: fit-content;
 }
-.index h1, .index h2 {
+
+h1,
+h2 {
   text-align: center;
-  margin: 0 12%;
 }
-.index .actividad {
+
+.actividad {
   text-align: center;
   background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
   color: white;
-  margin-top: 5%;
+  margin-top: 1%;
 }
-.index img {
+
+img {
   width: 30%;
   margin: auto;
+  display: block;
+}
+
+#api {
+  margin-top: 3%;
 }/*# sourceMappingURL=styles.css.map */

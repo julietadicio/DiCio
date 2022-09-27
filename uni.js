@@ -1,36 +1,4 @@
-
-function storage() {
-
-    localStorage.nombre = document.getElementById("loginNombre").value;
-    localStorage.apellido = document.getElementById("loginApellido").value;
-
-    localStorage.setItem('nombre', localStorage.nombre)
-    localStorage.setItem('apellido', localStorage.apellido)
-
-    document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + localStorage.nombre + " " + localStorage.apellido + ", te estábamos esperando."
-
-    console.log(`${localStorage.nombre} ${localStorage.apellido} esta logueado`);
-}
-
-
-function promediar() {
-
-    const trim1 = document.getElementById('1trim').value;
-    const trim2 = document.getElementById('2trim').value;
-    const trim3 = document.getElementById('3trim').value;
-
-    const resultado = (parseInt(trim1) + parseInt(trim2) + parseInt(trim3))
-    const resultado2 = (resultado / 3)
-    console.log(resultado);
-
-    let h2Promedio = document.getElementById('verPromedio')
-
-    if (resultado > 21) {
-        h2Promedio.innerHTML = `La suma de tus notas da ${resultado}, y tu promedio fue de ${resultado2.toFixed(1)}. Aprobaste! Felicidades.`
-    } else {
-        h2Promedio.innerHTML = `La suma de tus notas da ${resultado}, y tu promedio fue de ${resultado2.toFixed(1)}. Lamentamos informarte que desaprobaste.`
-    }
-}
+document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + localStorage.nombre + " " + localStorage.apellido + ", te estábamos esperando."
 
 function universidad() {
     class Estudiante {
@@ -99,8 +67,6 @@ btnModal.addEventListener('click', function (e) {
         universidadModal.innerHTML = 'Por eso agradecería si tienen en cuenta mi aplicación para la universidad ' + estudianteNuevo.universidad + '.'
     }
 })
-
-
 const enviar = document.getElementById('send')
 enviar.addEventListener('click', function (e) {
     if (e.target == enviar) {
@@ -112,63 +78,4 @@ enviar.addEventListener('click', function (e) {
             timer: 2000
         })
     }
-})
-
-
-// const datosApi = document.querySelector('#api')
-// fetch('https://www.boredapi.com/api/activity?type=recreational')
-//     .then((response) => response.json())
-//     .then((data) => {
-//         data.forEach(post => {
-//             const li = document.createElement('li')
-//             li.innerHTML =
-//             `
-//             <h5>${post.activity}</h5>
-//             <h5>${post.type}</h5>
-//             `
-//            datosApi.append(li)
-//         })
-//     })
-
-
-
-
-// const datosApi = document.querySelector('#api')
-// fetch('https://jsonplaceholder.typicode.com/posts')
-//     .then((response) => response.json())
-//     .then((data) => {
-//         data.forEach(post => {
-//             const li = document.createElement('li')
-//             li.innerHTML =
-//                 `
-//             <h5>${post.title}</h5>
-//             <h5>${post.body}</h5>
-//             `
-
-//             datosApi.append(li)
-//         })
-//     })
-
-const url = 'https://www.boredapi.com/api/activity/'
-
-fetch(url)
-.then(response => response.json())
-.then(data => {
-
-    let verApi = document.getElementById('api')
-    let precioApi = document.getElementById('precioApi')
-    verApi.innerHTML =
-    `
-    <h4>${data.activity}</h4>
-    <p>Para hacerlo de a ${data.participants} persona/s.</p>
-    <p>Tipo de actividad: ${data.type} </p>
-    <p>${data.link}</p>
-    `
-    if(data.price > 0) {
-        precioApi.innerHTML = 'Esta actividad puede costar dinero'
-    } else {
-        precioApi.innerHTML = 'Esta actividad es gratuita!'
-    }
-
-    console.log(data);
 })

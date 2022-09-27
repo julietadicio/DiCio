@@ -6,123 +6,128 @@ $color: #1488CC;
   overflow-x: hidden;
 }
 
-.index {
-  nav {
-    height: 20%;
-    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
-    background: linear-gradient(to right, #2B32B2, #1488CC);
+nav {
+  height: 20%;
+  background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+  background: linear-gradient(to right, #2B32B2, #1488CC);
 
-    li a {
-      color: white;
-      list-style: none;
-    }
+  li a {
+    color: white;
+    list-style: none;
+  }
+}
+
+
+button {
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  border: none;
+  padding: 1% 3%;
+  border-radius: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: larger;
+  letter-spacing: .20rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 2px;
+    z-index: -2;
   }
 
-  button {
-    display: block;
-    margin: auto;
-    margin-top: 3%;
-    border: none;
-    padding: 1% 3%;
-    border-radius: 10rem;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: larger;
-    letter-spacing: .20rem;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #2B32B2;
     transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    cursor: pointer;
+    border-radius: 2px;
+    z-index: -1;
+  }
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $color;
-      border-radius: 10rem;
-      z-index: -2;
-    }
+  &:hover {
+    color: #fff;
 
     &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: #2B32B2;
-      transition: all .3s;
-      border-radius: 10rem;
-      z-index: -1;
-    }
-
-    &:hover {
-      color: #fff;
-
-      &:before {
-        width: 100%;
-      }
+      width: 100%;
     }
   }
+}
 
-  table {
-    margin-top: 1%;
-  }
+table {
+  margin-top: 1%;
+}
 
-  form {
-    text-align: center;
-    display: flex;
-    justify-content: center;
+form {
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
-  }
+}
 
-  input {
-    border: 2px solid #1488CC;
-    padding: 1%;
-    border-radius: 5px;
-    margin: 0 10px;
-    overflow: auto;
-  }
+input {
+  border: 2px solid #1488CC;
+  padding: 1%;
+  border-radius: 5px;
+  margin: 0 10px;
+  overflow: auto;
+}
 
-  #moreInfo {
-    display: none;
-  }
+#moreInfo {
+  display: none;
+}
 
-  #verPromedio {
-    text-align: center;
-    margin-top: 1%;
-  }
 
-  #modal {
-    display: none;
-    padding: 2%;
-    color: white;
-    background: linear-gradient(to right, #2B32B2, #1488CC);
-    border-radius: 5px;
-    text-align: center;
-    margin: auto;
-    margin-top: 3%;
-    width: fit-content;
-  }
+#verPromedio {
+  text-align: center;
+  margin-top: 1%;
+}
 
-  h1, h2 {
-    text-align: center;
-    margin: 0 12%;
-  }
+#modal {
+  display: none;
+  padding: 2%;
+  color: white;
+  background: linear-gradient(to right, #2B32B2, #1488CC);
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  margin-top: 3%;
+  width: fit-content;
+}
 
-  .actividad {
-    text-align: center;
-    background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
-    color: white;
-    margin-top: 5%;
-  }
+h1,
+h2 {
+  text-align: center;
+}
 
-  img {
-    width: 30%;
-    margin:auto;
-  }
+.actividad {
+  text-align: center;
+  background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
+  color: white;
+  margin-top: 1%;
+}
+
+img {
+  width: 30%;
+  margin: auto;
+  display: block;
+}
+
+#api {
+  margin-top: 3%;
 }
