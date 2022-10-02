@@ -4,13 +4,16 @@
 }
 
 nav {
-  height: 20%;
+  height: 25%;
   background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
   background: linear-gradient(to right, #2B32B2, #1488CC);
 }
 nav li a {
   color: white;
   list-style: none;
+}
+nav a:hover {
+  color: white;
 }
 
 button {
@@ -108,6 +111,8 @@ h2 {
   text-align: center;
   background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
   color: white;
+}
+.actividad #bienvenido {
   margin-top: 1%;
 }
 
