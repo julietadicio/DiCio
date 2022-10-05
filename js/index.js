@@ -6,7 +6,6 @@ function storage() {
     localStorage.setItem('nombre', localStorage.nombre)
     localStorage.setItem('apellido', localStorage.apellido)
 
-    console.log(`${localStorage.nombre} ${localStorage.apellido} esta logueado`);
 }
 
 document.getElementById("bienvenido").innerHTML = "Bienvenid@ " + localStorage.nombre + " " + localStorage.apellido + ", te estábamos esperando."
@@ -20,7 +19,6 @@ function promediar() {
 
     const resultado = (parseInt(trim1) + parseInt(trim2) + parseInt(trim3))
     const resultado2 = (resultado / 3)
-    console.log(resultado);
 
     let h2Promedio = document.getElementById('verPromedio')
 

@@ -41,7 +41,6 @@ const estudiantes = []
 function agregar() {
     estudiantes.push(estudianteNuevo)
     estudiantes.push(estudianteNuevo.condicion())
-    console.log(estudiantes);
     document.getElementById('tabla').innerHTML += '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido +
         '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.universidad + '</td><td>' + estudianteNuevo.condicion() +
         '</td></tr></tbody>'
