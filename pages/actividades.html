@@ -19,45 +19,48 @@
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input id="loginNombre" type="text" placeholder="Nombre">
+                    <input id="loginApellido" type="text" placeholder="Apellido">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="storage()" id="verBienvenida" class="btn btn-primary">Log In</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <input id="loginNombre" type="text" placeholder="Nombre">
-          <input id="loginApellido" type="text" placeholder="Apellido">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" onclick="storage()" id="verBienvenida" class="btn btn-primary">Log In</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <nav>
-      <ul class="nav justify-content-center">
-          <li class="nav-item">
-              <a class="nav-link" href="/index.html">Promedio</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="universidad.html">Universidad</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="">Actividades</a>
-          </li>
-          <li>
-              <button type="button" class="btn btn-primary login" data-toggle="modal" data-target="#exampleModal">
-                  Log In
-              </button>
-          </li>
-      </ul>
-  </nav>
+    <nav>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Promedio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="universidad.html">Universidad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Actividades</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="clima.html">Clima</a>
+            </li>
+            <li>
+                <button type="button" class="btn btn-primary login" data-toggle="modal" data-target="#exampleModal">
+                    Log In
+                </button>
+            </li>
+        </ul>
+    </nav>
 
     <div class="actividad">
         <h4 id="bienvenido"></h4>
@@ -81,7 +84,7 @@
         </div>
     </footer>
 
-    <script src="/act.js"></script>
+    <script src="/js/act.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
