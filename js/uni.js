@@ -84,24 +84,30 @@ enviar.addEventListener('click', function (e) {
 //Guardar estudiantes en local storage
 function guardar() {
 
-    const arrayGuardar = [localStorage.nombreGuardar = document.getElementById("nombre").value,
-    localStorage.apellidoGuardar = document.getElementById('apellido').value,
-    localStorage.promedioGuardar = document.getElementById('promedio').value,
-    localStorage.universidadGuardar = document.getElementById('universidad').value]
+    const arrayGuardar = []
 
 
+    arrayGuardar.push(document.getElementById("nombre").value,
+    document.getElementById('apellido').value,
+    document.getElementById('promedio').value,
+    document.getElementById('universidad').value)
+
+
+    for (let i = 0; i < arrayGuardar.length; i++) {
+        localStorage.setItem('datos', arrayGuardar[i])
+    }
+
+    // arrayGuardar.push(localStorage.nombreGuardar = document.getElementById("nombre").value,
+    // localStorage.apellidoGuardar = document.getElementById('apellido').value,
+    // localStorage.promedioGuardar = document.getElementById('promedio').value,
+    // localStorage.universidadGuardar = document.getElementById('universidad').value)
+
+
+    // localStorage.setItem('nombre', JSON.stringify(arrayGuardar))
+    // localStorage.setItem('apellido', JSON.stringify(arrayGuardar))
+    // localStorage.setItem('promedio', JSON.stringify(arrayGuardar))
+    // localStorage.setItem('universidad', JSON.stringify(arrayGuardar))
     
-    
-    
-    localStorage.setItem('nombre', JSON.stringify(arrayGuardar))
-    localStorage.setItem('apellido', JSON.stringify(arrayGuardar))
-    localStorage.setItem('promedio', JSON.stringify(arrayGuardar))
-    localStorage.setItem('universidad', JSON.stringify(arrayGuardar))
-    
-    localStorage.setItem('nombre', JSON.stringify(localStorage.nombreGuardar))
-    localStorage.setItem('apellido', JSON.stringify(localStorage.apellidoGuardar))
-    localStorage.setItem('promedio', JSON.stringify(localStorage.promedioGuardar))
-    localStorage.setItem('universidad', JSON.stringify(localStorage.universidadGuardar))
     
     const nombreG = document.getElementById('nombreG')
     const apellidoG = document.getElementById('apellidoG')
@@ -114,6 +120,10 @@ function guardar() {
     universidadG.innerHTML = "Universidad: " + localStorage.universidadGuardar
 }
 
+// localStorage.setItem('nombre', JSON.stringify(localStorage.nombreGuardar))
+// localStorage.setItem('apellido', JSON.stringify(localStorage.apellidoGuardar))
+// localStorage.setItem('promedio', JSON.stringify(localStorage.promedioGuardar))
+// localStorage.setItem('universidad', JSON.stringify(localStorage.universidadGuardar))
 
 
 // localStorage.guardarEstudiante = document.getElementById("guardar").value;
@@ -125,5 +135,3 @@ function guardar() {
 // tablaGuardar.innerHTML = + '<tbody><tr><td>' + estudianteNuevo.nombre + '</td><td>' + estudianteNuevo.apellido +
 //     '</td><td>' + estudianteNuevo.promedio + '</td><td>' + estudianteNuevo.universidad + '</td><td>' + estudianteNuevo.condicion() +
 //     '</td></tr></tbody>'
-
-
