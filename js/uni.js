@@ -26,9 +26,13 @@ function universidad() {
     const inputPromedio = document.getElementById('promedio').value
     const inputUniversidad = document.getElementById('universidad').value
 
+    localStorage.setItem('nombreEstudiante', inputNombre)
+    localStorage.setItem('apellidoEstudiante', inputApellido)
+    localStorage.setItem('promedioEstudiante', inputPromedio)
+    localStorage.setItem('universidadEstudiante', inputUniversi)
+
     estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio, inputUniversidad)
     agregar()
-    guardar()
 }
 
 //Limpiar inputs

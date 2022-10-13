@@ -130,7 +130,8 @@ img {
   display: inline;
 }
 
-.searchC {
+#searchC {
   display: block;
   margin: auto;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
