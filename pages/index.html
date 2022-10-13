@@ -70,9 +70,11 @@
         <img src="/assets/img/Calculator-rafiki.png">
         <h1 class="display-4">Calculá instantáneamente tu promedio</h1>
         <h2>No te lleves ninguna sorpesa, sacate la duda ya.</h2>
-        <label for="">1er trimestre</label><input type="number" id="1trim">
-        <label for="">2do trimestre</label><input type="number" id="2trim">
-        <label for="">3er trimestre</label><input type="number" id="3trim">
+        <div id="inputsLabels">
+          <label for="">1er trimestre</label><input type="number" id="1trim">
+          <label for="">2do trimestre</label><input type="number" id="2trim">
+          <label for="">3er trimestre</label><input type="number" id="3trim">
+        </div>
         <h2 id="verPromedio"></h2>
       </div>
       <button id="promediar" onclick="promediar()">Calcular promedio</button>

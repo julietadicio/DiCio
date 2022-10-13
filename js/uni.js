@@ -9,12 +9,12 @@ function universidad() {
             this.universidad = universidad
         }
         condicion() {
-            if (this.promedio == 21) {
+            if (this.promedio == 7) {
                 return `${this.nombre} esta aprobado con un 7, asique va a tener oportunidades, pero algo limitadas.`
-            } else if (this.promedio > 21) {
+            } else if (this.promedio > 7) {
                 return `${this.nombre} esta aprobado por sobre el mínimo, lo que significa que va a tener amplias opciones 
                 para elegir universidad! Felicidades.`
-            } else if (this.promedio < 21) {
+            } else if (this.promedio < 7) {
                 return `${this.nombre} esta reprobado, pero no significa que no hay opciones. Con un ensayo desarrollado y de 
                 buen nivel es posible atraer la atención de algunas universidades. A no perder la fé!`
             }
@@ -29,7 +29,7 @@ function universidad() {
     localStorage.setItem('nombreEstudiante', inputNombre)
     localStorage.setItem('apellidoEstudiante', inputApellido)
     localStorage.setItem('promedioEstudiante', inputPromedio)
-    localStorage.setItem('universidadEstudiante', inputUniversi)
+    localStorage.setItem('universidadEstudiante', inputUniversidad)
 
     estudianteNuevo = new Estudiante(inputNombre, inputApellido, inputPromedio, inputUniversidad)
     agregar()

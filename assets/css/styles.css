@@ -1,6 +1,5 @@
 * {
   font-family: "Rubik", sans-serif;
-  overflow-x: hidden;
 }
 
 nav {
@@ -112,8 +111,17 @@ h2 {
   background-image: linear-gradient(to right top, #ff6f91, #ff7689, #ff7d81, #ff847b, #ff8c76, #ff9372, #ff9a6e, #ffa16b, #ffaa67, #ffb363, #ffbd61, #ffc75f);
   color: white;
 }
-.actividad #bienvenido {
-  margin-top: 1%;
+.actividad a {
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+  margin-bottom: 3%;
+  transition: 0.2s;
+}
+.actividad a:hover {
+  background-color: rgba(255, 255, 255, 0.137254902);
 }
 
 img {
@@ -134,4 +142,13 @@ img {
   display: block;
   margin: auto;
   text-align: center;
+}
+
+#inputsLabels {
+  display: flex;
+  align-items: center;
+}
+
+.clima {
+  background-image: linear-gradient(to right, #e2e7ef, #b7c7f4);
 }/*# sourceMappingURL=styles.css.map */
